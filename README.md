@@ -11,18 +11,36 @@ An admin panel for menu items on Laravel 5, using [Backpack\CRUD](https://github
 
 ## Install
 
-Via Composer
+1) In your terminal
 
 ``` bash
-$ composer require laravel-backpack/menumanager
+$ composer require backpack/menumanager
 ```
 
-## Usage
+2) Then add the service providers to your config/app.php file:
 
-``` php
-$skeleton = new League\Skeleton();
-echo $skeleton->echoPhrase('Hello, League!');
 ```
+'Backpack\MenuManager\MenuManagerServiceProvider',
+```
+
+3) Publish the migration:
+
+```
+php artisan vendor:publish --provider="Backpack\MenuManager\MenuManagerServiceProvider"
+```
+
+4) Run the migration to have the database table we need:
+
+```
+php artisan migrate
+```
+
+5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
+
+```html
+<li><a href="{{ url('admin/menu-item') }}"><i class="fa fa-list"></i> <span>Menu</span></a></li>
+```
+
 
 ## Change log
 
