@@ -71,15 +71,15 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [ico-version]: https://img.shields.io/packagist/v/backpack/MenuMager.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/laravel-backpack/MenuMager/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/laravel-backpack/MenuMager.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/laravel-backpack/MenuMager.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/laravel-backpack/MenuMager.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/Laravel-Backpack/MenuMager/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/Laravel-Backpack/MenuMager.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/Laravel-Backpack/MenuMager.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/backpack/MenuMager.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/laravel-backpack/MenuMager
-[link-travis]: https://travis-ci.org/laravel-backpack/MenuMager
-[link-scrutinizer]: https://scrutinizer-ci.com/g/laravel-backpack/MenuMager/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/laravel-backpack/MenuMager
-[link-downloads]: https://packagist.org/packages/laravel-backpack/MenuMager
+[link-packagist]: https://packagist.org/packages/backpack/MenuMager
+[link-travis]: https://travis-ci.org/Laravel-Backpack/MenuMager
+[link-scrutinizer]: https://scrutinizer-ci.com/g/Laravel-Backpack/MenuMager/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/Laravel-Backpack/MenuMager
+[link-downloads]: https://packagist.org/packages/backpack/MenuMager
 [link-author]: https://github.com/tabacitu
 [link-contributors]: ../../contributors
