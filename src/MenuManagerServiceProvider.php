@@ -22,7 +22,7 @@ class MenuManagerServiceProvider extends ServiceProvider
     public function boot()
     {
         // publish migrations
-        $this->publishes([ __DIR__.'/database/migrations' => database_path('migrations'), ], 'migrations');
+        $this->publishes([__DIR__.'/database/migrations' => database_path('migrations')], 'migrations');
     }
 
     /**
@@ -33,8 +33,7 @@ class MenuManagerServiceProvider extends ServiceProvider
      */
     public function setupRoutes(Router $router)
     {
-        $router->group(['namespace' => 'Backpack\MenuManager\app\Http\Controllers'], function($router)
-        {
+        $router->group(['namespace' => 'Backpack\MenuManager\app\Http\Controllers'], function ($router) {
             require __DIR__.'/app/Http/routes.php';
         });
     }
@@ -46,7 +45,7 @@ class MenuManagerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('menumanager',function($app){
+        $this->app->bind('menumanager', function ($app) {
             return new MenuManager($app);
         });
 
