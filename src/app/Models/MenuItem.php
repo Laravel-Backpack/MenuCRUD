@@ -1,16 +1,18 @@
-<?php namespace Backpack\MenuManager\app\Models;
+<?php
+
+namespace Backpack\MenuManager\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
 
-class MenuItem extends Model {
+class MenuItem extends Model
+{
+    use CrudTrait;
 
-	use CrudTrait;
+    protected $table = 'menu_items';
+    protected $fillable = ['name', 'type', 'link', 'page_id', 'parent_id'];
 
-	protected $table = 'menu_items';
-	protected $fillable = ['name', 'type', 'link', 'page_id', 'parent_id'];
-
-	public function parent()
+    public function parent()
     {
         return $this->belongsTo('Backpack\MenuManager\app\Models\MenuItem', 'parent_id');
     }
@@ -31,10 +33,9 @@ class MenuItem extends Model {
      */
     public static function getTree()
     {
-        $menu = MenuItem::orderBy('lft')->get();
+        $menu = self::orderBy('lft')->get();
 
-        if ($menu->count())
-        {
+        if ($menu->count()) {
             foreach ($menu as $k => $menu_item) {
                 $menu_item->children = collect([]);
 
@@ -54,7 +55,8 @@ class MenuItem extends Model {
         return $menu;
     }
 
-    public function url() {
+    public function url()
+    {
         switch ($this->type) {
             case 'external_link':
                 return $this->link;
@@ -69,5 +71,4 @@ class MenuItem extends Model {
                 break;
         }
     }
-
 }
