@@ -1,4 +1,4 @@
-# Backpack\MenuMager
+# Backpack\MenuManager
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -69,17 +69,17 @@ If you discover any security related issues, please email hello@tabacitu.ro inst
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/backpack/MenuMager.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/backpack/MenuManager.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/Laravel-Backpack/MenuMager/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/Laravel-Backpack/MenuMager.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/Laravel-Backpack/MenuMager.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/backpack/MenuMager.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/Laravel-Backpack/MenuManager/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/Laravel-Backpack/MenuManager.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/Laravel-Backpack/MenuManager.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/backpack/MenuManager.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/backpack/MenuMager
-[link-travis]: https://travis-ci.org/Laravel-Backpack/MenuMager
-[link-scrutinizer]: https://scrutinizer-ci.com/g/Laravel-Backpack/MenuMager/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/Laravel-Backpack/MenuMager
-[link-downloads]: https://packagist.org/packages/backpack/MenuMager
+[link-packagist]: https://packagist.org/packages/backpack/MenuManager
+[link-travis]: https://travis-ci.org/Laravel-Backpack/MenuManager
+[link-scrutinizer]: https://scrutinizer-ci.com/g/Laravel-Backpack/MenuManager/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/Laravel-Backpack/MenuManager
+[link-downloads]: https://packagist.org/packages/backpack/MenuManager
 [link-author]: https://github.com/tabacitu
 [link-contributors]: ../../contributors
