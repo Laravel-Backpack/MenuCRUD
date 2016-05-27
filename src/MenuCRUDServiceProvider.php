@@ -1,11 +1,11 @@
 <?php
 
-namespace Backpack\MenuManager;
+namespace Backpack\MenuCRUD;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
 
-class MenuManagerServiceProvider extends ServiceProvider
+class MenuCRUDServiceProvider extends ServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
@@ -33,9 +33,9 @@ class MenuManagerServiceProvider extends ServiceProvider
      */
     public function setupRoutes(Router $router)
     {
-        $router->group(['namespace' => 'Backpack\MenuManager\app\Http\Controllers'], function ($router) {
-            Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth'], 'namespace' => 'Admin'], function () {
-                CRUD::resource('menu-item', 'MenuItemCrudController');
+        $router->group(['namespace' => 'Backpack\MenuCRUD\app\Http\Controllers'], function ($router) {
+            \Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth'], 'namespace' => 'Admin'], function () {
+                \CRUD::resource('menu-item', 'MenuItemCrudController');
             });
         });
     }
@@ -47,10 +47,6 @@ class MenuManagerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('menumanager', function ($app) {
-            return new MenuManager($app);
-        });
-
         $this->setupRoutes($this->app->router);
     }
 }

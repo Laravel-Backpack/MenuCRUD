@@ -1,12 +1,12 @@
 {
-    "name": "backpack/menumanager",
+    "name": "backpack/menucrud",
     "type": "library",
     "description": "An admin panel for menu items, using Backpack\\CRUD on Laravel 5.",
     "keywords": [
         "backpack",
-        "MenuManager"
+        "MenuCRUD"
     ],
-    "homepage": "https://github.com/backpack/MenuManager",
+    "homepage": "https://github.com/backpack/MenuCRUD",
     "license": "MIT",
     "authors": [
         {
@@ -28,12 +28,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Backpack\\MenuManager\\": "src"
+            "Backpack\\MenuCRUD\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Backpack\\MenuManager\\": "tests"
+            "Backpack\\MenuCRUD\\": "tests"
         }
     },
     "scripts": {

@@ -1,4 +1,4 @@
-# Backpack\MenuManager
+# Backpack\MenuCRUD
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -26,16 +26,20 @@ The only PRO of installing it as a package is that you may benefit from updates.
 #### Intallation type (A) - download
 
 
-1) [Download the latest build](https://github.com/Laravel-Backpack/menumanager/archive/master.zip).
+1) [Download the latest build](https://github.com/Laravel-Backpack/MenuCRUD/archive/master.zip).
 
 2) Paste the 'app' folder over your 'app' folder. No overwrite warnings should come up.
 
-3) Run the migration to have the database table we need:
+3) Replace all mentions of 'Backpack\MenuCRUD\app' in the pasted files with your application's namespace ('App' if you haven't changed it):
+- app/Http/Controllers/Admin/MenuItemCrudController.php
+- app/Models/MenuItem.php
+
+4) Run the migration to have the database table we need:
 ```
 php artisan migrate
 ```
 
-4) Add MenuCRUD to your routes file:
+5) Add MenuCRUD to your routes file:
 
 ```
 Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth'], 'namespace' => 'Admin'], function () {
@@ -44,7 +48,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth'], 'namespace' 
 });
 ```
 
-5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
+6) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
 
 ```html
 <li><a href="{{ url('admin/menu-item') }}"><i class="fa fa-list"></i> <span>Menu</span></a></li>
@@ -57,19 +61,19 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth'], 'namespace' 
 1) In your terminal, run:
 
 ``` bash
-$ composer require backpack/menumanager
+$ composer require backpack/MenuCRUD
 ```
 
 2) Then add the service providers to your config/app.php file:
 
 ```
-'Backpack\MenuManager\MenuManagerServiceProvider',
+'Backpack\MenuCRUD\MenuCRUDServiceProvider',
 ```
 
 3) Publish the migration:
 
 ```
-php artisan vendor:publish --provider="Backpack\MenuManager\MenuManagerServiceProvider"
+php artisan vendor:publish --provider="Backpack\MenuCRUD\MenuCRUDServiceProvider"
 ```
 
 4) Run the migration to have the database table we need:
@@ -113,17 +117,17 @@ If you discover any security related issues, please email hello@tabacitu.ro inst
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/backpack/MenuManager.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/backpack/MenuCRUD.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/Laravel-Backpack/MenuManager/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/Laravel-Backpack/MenuManager.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/Laravel-Backpack/MenuManager.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/backpack/MenuManager.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/Laravel-Backpack/MenuCRUD/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/Laravel-Backpack/MenuCRUD.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/Laravel-Backpack/MenuCRUD.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/backpack/MenuCRUD.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/backpack/MenuManager
-[link-travis]: https://travis-ci.org/Laravel-Backpack/MenuManager
-[link-scrutinizer]: https://scrutinizer-ci.com/g/Laravel-Backpack/MenuManager/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/Laravel-Backpack/MenuManager
-[link-downloads]: https://packagist.org/packages/backpack/MenuManager
+[link-packagist]: https://packagist.org/packages/backpack/MenuCRUD
+[link-travis]: https://travis-ci.org/Laravel-Backpack/MenuCRUD
+[link-scrutinizer]: https://scrutinizer-ci.com/g/Laravel-Backpack/MenuCRUD/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/Laravel-Backpack/MenuCRUD
+[link-downloads]: https://packagist.org/packages/backpack/MenuCRUD
 [link-author]: https://github.com/tabacitu
 [link-contributors]: ../../contributors

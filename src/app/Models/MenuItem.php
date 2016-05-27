@@ -1,6 +1,6 @@
 <?php
 
-namespace Backpack\MenuManager\app\Models;
+namespace Backpack\MenuCRUD\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\CrudTrait;
@@ -14,12 +14,12 @@ class MenuItem extends Model
 
     public function parent()
     {
-        return $this->belongsTo('Backpack\MenuManager\app\Models\MenuItem', 'parent_id');
+        return $this->belongsTo('Backpack\MenuCRUD\app\Models\MenuItem', 'parent_id');
     }
 
     public function children()
     {
-        return $this->hasMany('Backpack\MenuManager\app\Models\MenuItem');
+        return $this->hasMany('Backpack\MenuCRUD\app\Models\MenuItem');
     }
 
     public function page()

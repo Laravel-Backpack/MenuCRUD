@@ -1,6 +1,6 @@
 # Changelog
 
-All Notable changes to `:package_name` will be documented in this file.
+All Notable changes to `MenuCRUD` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
@@ -20,6 +20,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Security
 - Nothing
+
+
+## 1.0.2 - 2016-05-26
+
+### Fixed
+- Renamed to MenuCRUD;
 
 
 ## 1.0.1 - 2016-05-26
