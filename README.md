@@ -28,7 +28,7 @@ The only PRO of installing it as a package is that you may benefit from updates.
 
 1) [Download the latest build](https://github.com/Laravel-Backpack/MenuCRUD/archive/master.zip).
 
-2) Paste the 'app' folder over your 'app' folder. No overwrite warnings should come up.
+2) Paste the 'app' and 'database' folders over your projects (merge them). No file overwrite warnings should come up.
 
 3) Replace all mentions of 'Backpack\MenuCRUD\app' in the pasted files with your application's namespace ('App' if you haven't changed it):
 - app/Http/Controllers/Admin/MenuItemCrudController.php
