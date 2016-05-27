@@ -11,7 +11,50 @@ An admin panel for menu items on Laravel 5, using [Backpack\CRUD](https://github
 
 ## Install
 
-1) In your terminal
+Since MenuCRUD is just a Backpack\CRUD example, you can choose to install it one of two ways.
+
+**(A) Download and place files in your application** (recommended)
+
+or
+
+**(B) As a package**
+
+The only PRO of installing it as a package is that you may benefit from updates. But the reality is there is very little (if any) bug fixing to do, so you probably won't need to update it, ever.
+
+
+
+#### Intallation type (A) - download
+
+
+1) [Download the latest build](https://github.com/Laravel-Backpack/menumanager/archive/master.zip).
+
+2) Paste the 'app' folder over your 'app' folder. No overwrite warnings should come up.
+
+3) Run the migration to have the database table we need:
+```
+php artisan migrate
+```
+
+4) Add MenuCRUD to your routes file:
+
+```
+Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth'], 'namespace' => 'Admin'], function () {
+    // Backpack\MenuCRUD
+    CRUD::resource('menu-item', 'MenuItemCrudController');
+});
+```
+
+5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
+
+```html
+<li><a href="{{ url('admin/menu-item') }}"><i class="fa fa-list"></i> <span>Menu</span></a></li>
+```
+
+
+
+#### Intallation type (B) - package
+
+1) In your terminal, run:
 
 ``` bash
 $ composer require backpack/menumanager
@@ -40,6 +83,7 @@ php artisan migrate
 ```html
 <li><a href="{{ url('admin/menu-item') }}"><i class="fa fa-list"></i> <span>Menu</span></a></li>
 ```
+
 
 
 ## Change log
