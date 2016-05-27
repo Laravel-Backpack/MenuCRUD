@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## 1.0.1 - 2016-05-26
+
+### Fixed
+- Moved routes into MenuManagerServiceProvider so that the package could be easily downloaded from github and pasted over working project.
+
+
 ## 1.0.0 - 2016-05-26
 
 ### Added

@@ -34,7 +34,9 @@ class MenuManagerServiceProvider extends ServiceProvider
     public function setupRoutes(Router $router)
     {
         $router->group(['namespace' => 'Backpack\MenuManager\app\Http\Controllers'], function ($router) {
-            require __DIR__.'/app/Http/routes.php';
+            Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth'], 'namespace' => 'Admin'], function () {
+                CRUD::resource('menu-item', 'MenuItemCrudController');
+            });
         });
     }
 

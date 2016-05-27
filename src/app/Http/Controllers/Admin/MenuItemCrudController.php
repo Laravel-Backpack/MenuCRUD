@@ -19,7 +19,7 @@ class MenuItemCrudController extends CrudController
         $this->crud->setEntityNameStrings('menu item', 'menu items');
 
         $this->crud->allowAccess('reorder');
-        $this->crud->enableReorder('name', 1);
+        $this->crud->enableReorder('name', 2);
 
         $this->crud->addColumn([
                                 'name' => 'name',
