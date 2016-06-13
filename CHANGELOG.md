@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## 1.0.3 - 2016-06-13
+
+### Fixed
+- Migration file had double extension (.php.php);
+
+
 ## 1.0.2 - 2016-05-26
 
 ### Fixed
