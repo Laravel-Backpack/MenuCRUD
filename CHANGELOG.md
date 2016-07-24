@@ -22,6 +22,18 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## 1.0.5 - 2016-07-24
+
+### Added
+- Fixed MenuItem children relationship.
+
+
+## 1.0.4 - 2016-07-23
+
+### Added
+- Backpack\CRUD 3.0 dependency.
+
+
 ## 1.0.3 - 2016-06-13
 
 ### Fixed
