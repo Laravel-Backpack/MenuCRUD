@@ -26,6 +26,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 ### Added
 - Fixed MenuItem children relationship.
+- Switched to the 'admin' middleware for the routes.
 
 
 ## 1.0.4 - 2016-07-23
