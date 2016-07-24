@@ -19,7 +19,7 @@ class MenuItem extends Model
 
     public function children()
     {
-        return $this->hasMany('Backpack\MenuCRUD\app\Models\MenuItem');
+        return $this->hasMany('Backpack\MenuCRUD\app\Models\MenuItem', 'parent_id');
     }
 
     public function page()
