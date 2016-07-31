@@ -23,6 +23,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 
 
+
 ## 1.0.6 - 2016-07-31
 
 ### Added
