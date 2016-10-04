@@ -23,7 +23,7 @@ The only PRO of installing it as a package is that you may benefit from updates.
 
 
 
-#### Intallation type (A) - download
+#### Installation type (A) - download
 
 
 1) [Download the latest build](https://github.com/Laravel-Backpack/MenuCRUD/archive/master.zip).
@@ -56,7 +56,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth'], 'namespace' 
 
 
 
-#### Intallation type (B) - package
+#### Installation type (B) - package
 
 1) In your terminal, run:
 
