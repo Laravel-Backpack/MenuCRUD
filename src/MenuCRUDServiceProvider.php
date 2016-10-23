@@ -34,7 +34,7 @@ class MenuCRUDServiceProvider extends ServiceProvider
     public function setupRoutes(Router $router)
     {
         $router->group(['namespace' => 'Backpack\MenuCRUD\app\Http\Controllers'], function ($router) {
-            \Route::group(['prefix' => 'admin', 'middleware' => ['web', 'admin'], 'namespace' => 'Admin'], function () {
+            \Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['web', 'admin'], 'namespace' => 'Admin'], function () {
                 \CRUD::resource('menu-item', 'MenuItemCrudController');
             });
         });
