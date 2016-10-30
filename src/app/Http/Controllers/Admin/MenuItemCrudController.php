@@ -15,7 +15,7 @@ class MenuItemCrudController extends CrudController
         parent::__construct();
 
         $this->crud->setModel("Backpack\MenuCRUD\app\Models\MenuItem");
-        $this->crud->setRoute('admin/menu-item');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/menu-item');
         $this->crud->setEntityNameStrings('menu item', 'menu items');
 
         $this->crud->allowAccess('reorder');
