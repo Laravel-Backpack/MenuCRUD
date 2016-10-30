@@ -22,6 +22,14 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+
+
+## 1.0.9 - 2016-10-30
+
+### Fixed
+- admin prefix now uses the config value from backpack/base;
+
+
 ## 1.0.8 - 2016-07-31
 
 ### Fixed
