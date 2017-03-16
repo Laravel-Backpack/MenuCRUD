@@ -2,8 +2,8 @@
 
 namespace Backpack\MenuCRUD;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Routing\Router;
+use Illuminate\Support\ServiceProvider;
 
 class MenuCRUDServiceProvider extends ServiceProvider
 {
