@@ -63,7 +63,7 @@ class MenuItem extends Model
                 break;
 
             case 'internal_link':
-                return url($this->link);
+                return is_null($this->link) ? "#" : url($this->link);
                 break;
 
             default: //page_link
