@@ -72,7 +72,7 @@ $ composer require backpack/MenuCRUD
 2) Then add the service providers to your config/app.php file:
 
 ```
-'Backpack\MenuCRUD\MenuCRUDServiceProvider',
+Backpack\MenuCRUD\MenuCRUDServiceProvider::class,
 ```
 
 3) Publish the migration:
