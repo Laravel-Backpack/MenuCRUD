@@ -22,6 +22,10 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## 1.0.10 - 2017-04-05
+
+### Added
+- Backpack/PageManager dependency in composer.json;
 
 
 ## 1.0.9 - 2016-10-30
