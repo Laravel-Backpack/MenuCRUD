@@ -34,6 +34,15 @@ class MenuItemCrudController extends CrudController
                                 'model' => "\Backpack\MenuCRUD\app\Models\MenuItem",
                             ]);
 
+        $this->crud->addColumn([
+                                'label' => 'Menu Label',
+                                'type' => 'select',
+                                'name' => 'menu_id',
+                                'entity' => 'menu',
+                                'attribute' => 'name',
+                                'model' => "\Backpack\MenuCRUD\app\Models\Menu",
+                            ]);
+
         $this->crud->addField([
                                 'name' => 'name',
                                 'label' => 'Label',
@@ -45,6 +54,14 @@ class MenuItemCrudController extends CrudController
                                 'entity' => 'parent',
                                 'attribute' => 'name',
                                 'model' => "\Backpack\MenuCRUD\app\Models\MenuItem",
+                            ]);
+        $this->crud->addField([
+                                'label' => 'Menu',
+                                'type' => 'select',
+                                'name' => 'menu_id',
+                                'entity' => 'parent',
+                                'attribute' => 'name',
+                                'model' => "\Backpack\MenuCRUD\app\Models\Menu",
                             ]);
         $this->crud->addField([
                                 'name' => 'type',
