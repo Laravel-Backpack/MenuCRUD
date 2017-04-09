@@ -3,6 +3,7 @@
 namespace Backpack\MenuCRUD\app\Models;
 
 use Backpack\CRUD\CrudTrait;
+use Backpack\MenuCRUD\app\Models\Menu;
 use Illuminate\Database\Eloquent\Model;
 
 class MenuItem extends Model
@@ -10,7 +11,7 @@ class MenuItem extends Model
     use CrudTrait;
 
     protected $table = 'menu_items';
-    protected $fillable = ['name', 'type', 'link', 'page_id', 'parent_id'];
+    protected $fillable = ['name', 'type', 'link', 'page_id', 'parent_id', 'menu_id'];
 
     public function parent()
     {
@@ -27,13 +28,23 @@ class MenuItem extends Model
         return $this->belongsTo('Backpack\PageManager\app\Models\Page', 'page_id');
     }
 
+    public function menu()
+    {
+        return $this->belongsTo('Backpack\MenuCRUD\app\Models\Menu', 'menu_id', 'id');
+    }
+
     /**
      * Get all menu items, in a hierarchical collection.
      * Only supports 2 levels of indentation.
      */
-    public static function getTree()
+    public static function getTree($menuName = null)
     {
         $menu = self::orderBy('lft')->get();
+
+        if(!is_null($menuName)) {
+            $menuId = Menu::where('name', $menuName)->first()->id;
+            $menu = self::orderBy('lft')->where('menu_id', $menuId)->get();
+        }
 
         if ($menu->count()) {
             foreach ($menu as $k => $menu_item) {
