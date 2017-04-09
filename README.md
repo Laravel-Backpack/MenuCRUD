@@ -37,9 +37,11 @@ The only PRO of installing it as a package is that you may benefit from updates.
 
 3) Replace all mentions of 'Backpack\MenuCRUD\app' in the pasted files with your application's namespace ('App' if you haven't changed it):
 - app/Http/Controllers/Admin/MenuItemCrudController.php
+- app/Http/Controllers/Admin/MenuCrudController.php
 - app/Models/MenuItem.php
+- app/Models/Menu.php
 
-4) Run the migration to have the database table we need:
+4) Run the migrations to have the database tables we need:
 ```
 php artisan migrate
 ```
@@ -50,13 +52,20 @@ php artisan migrate
 Route::group(['prefix' => 'admin', 'middleware' => ['web', 'auth'], 'namespace' => 'Admin'], function () {
     // Backpack\MenuCRUD
     CRUD::resource('menu-item', 'MenuItemCrudController');
+    CRUD::resource('menu', 'MenuCrudController');
 });
 ```
 
 6) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
 
 ```html
-<li><a href="{{ url('admin/menu-item') }}"><i class="fa fa-list"></i> <span>Menu</span></a></li>
+<li class="treeview">
+    <a href="#"><i class="fa fa-list"></i> <span>Menus</span> <i class="fa fa-angle-left pull-right"></i></a>
+    <ul class="treeview-menu">
+        <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/menu') }}"><i class="fa fa-bars"></i> <span>Sections</span></a></li>
+        <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/menu-item') }}"><i class="fa fa-sort"></i> <span>Items</span></a></li>
+    </ul>
+</li>
 ```
 
 
@@ -90,7 +99,13 @@ php artisan migrate
 5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
 
 ```html
-<li><a href="{{ url('admin/menu-item') }}"><i class="fa fa-list"></i> <span>Menu</span></a></li>
+<li class="treeview">
+    <a href="#"><i class="fa fa-list"></i> <span>Menus</span> <i class="fa fa-angle-left pull-right"></i></a>
+    <ul class="treeview-menu">
+        <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/menu') }}"><i class="fa fa-bars"></i> <span>Sections</span></a></li>
+        <li><a href="{{ url(config('backpack.base.route_prefix', 'admin') . '/menu-item') }}"><i class="fa fa-sort"></i> <span>Items</span></a></li>
+    </ul>
+</li>
 ```
 
 
