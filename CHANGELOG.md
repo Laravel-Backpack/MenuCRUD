@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## 1.0.11 - 2017-06-05
+
+### Fixed
+- Check for page existence before outputing its URL;
+
+
 ## 1.0.10 - 2017-04-05
 
 ### Added
