@@ -21,11 +21,16 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+## 1.0.12 - 2017-07-06
 
-## 1.0.11 - 2017-07-06
-
-### Added
+### Fixed
 - overwritable routes file;
+
+
+## 1.0.11 - 2017-07-05
+
+### Fixed
+- Check for page existence before outputing its URL;
 
 
 ## 1.0.10 - 2017-04-05
