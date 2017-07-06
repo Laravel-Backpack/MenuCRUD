@@ -22,6 +22,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 
+## 1.0.11 - 2017-07-06
+
+### Added
+- overwritable routes file;
+
+
 ## 1.0.10 - 2017-04-05
 
 ### Added
