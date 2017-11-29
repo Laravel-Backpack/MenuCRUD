@@ -21,6 +21,13 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 ### Security
 - Nothing
 
+
+## 1.0.13 - 2017-11-29
+
+### Added
+- package auto-discovery;
+
+
 ## 1.0.12 - 2017-07-06
 
 ### Fixed
