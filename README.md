@@ -68,7 +68,7 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
 1) In your terminal, run:
 
 ``` bash
-$ composer require backpack/menucrud
+composer require backpack/menucrud
 ```
 
 2) Then add the service providers to your config/app.php file:
@@ -104,7 +104,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 ## Testing
 
 ``` bash
-$ composer test
+composer test
 ```
 
 ## Overwriting functionality
