@@ -7,7 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-An admin panel for menu items on Laravel 5, using [Backpack\CRUD](https://github.com/Laravel-Backpack/crud). Add, edit, reorder, nest, rename menu items and link them to [Backpack\PageManager](https://github.com/Laravel-Backpack/pagemanager) pages, external link or custom internal link. 
+An admin panel for menu items on Laravel 5 or Laravel 6, using [Backpack\CRUD](https://github.com/Laravel-Backpack/crud). Add, edit, reorder, nest, rename menu items and link them to [Backpack\PageManager](https://github.com/Laravel-Backpack/pagemanager) pages, external link or custom internal link. 
 
 Usually used for front-end menus, not back-end. Adding a menu item in MenuCRUD will not add an item in the admin sidebar, though you can easily customize Backpack\Base's ```sidebar.blade.php``` to show all menu items in the db, if you'd like.
 
