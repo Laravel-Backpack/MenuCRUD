@@ -4,9 +4,6 @@ namespace Backpack\MenuCRUD\app\Http\Controllers\Admin;
 
 use App\Http\Requests;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-// VALIDATION: change the requests to match your own file names if you need form validation
-use Backpack\CRUD\app\Http\Requests\CrudRequest as StoreRequest;
-use Backpack\CRUD\app\Http\Requests\CrudRequest as UpdateRequest;
 
 class MenuItemCrudController extends CrudController
 {
@@ -59,15 +56,5 @@ class MenuItemCrudController extends CrudController
                 'page_model' => '\Backpack\PageManager\app\Models\Page',
             ]);
         });
-    }
-
-    public function store(StoreRequest $request)
-    {
-        return $this->storeEntry($request);
-    }
-
-    public function update(UpdateRequest $request)
-    {
-        return $this->updateEntry($request);
     }
 }
