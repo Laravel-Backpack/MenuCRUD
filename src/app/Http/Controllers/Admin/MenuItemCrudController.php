@@ -2,7 +2,6 @@
 
 namespace Backpack\MenuCRUD\app\Http\Controllers\Admin;
 
-use App\Http\Requests;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 class MenuItemCrudController extends CrudController
