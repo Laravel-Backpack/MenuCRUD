@@ -24,7 +24,7 @@ class MenuItemCrudController extends CrudController
 
         $this->crud->enableReorder('name', 3);
 
-        $this->crud->operation('list', function() {
+        $this->crud->operation('list', function () {
             $this->crud->addColumn([
                 'name' => 'name',
                 'label' => 'Label',
@@ -39,7 +39,7 @@ class MenuItemCrudController extends CrudController
             ]);
         });
 
-        $this->crud->operation(['create', 'update'], function() {
+        $this->crud->operation(['create', 'update'], function () {
             $this->crud->addField([
                 'name' => 'name',
                 'label' => 'Label',
@@ -59,7 +59,6 @@ class MenuItemCrudController extends CrudController
                 'page_model' => '\Backpack\PageManager\app\Models\Page',
             ]);
         });
-
     }
 
     public function store(StoreRequest $request)
