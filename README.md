@@ -51,7 +51,7 @@ php artisan migrate
 ```
 Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['web', 'auth'], 'namespace' => 'Admin'], function () {
     // Backpack\MenuCRUD
-    CRUD::resource('menu-item', 'MenuItemCrudController');
+    Route::crud('menu-item', 'MenuItemCrudController');
 });
 ```
 
@@ -71,28 +71,22 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
 composer require backpack/menucrud
 ```
 
-2) Then add the service providers to your config/app.php file:
-
-```
-Backpack\MenuCRUD\MenuCRUDServiceProvider::class,
-```
-
-3) Publish the migration:
+2) Publish the migration:
 
 ```
 php artisan vendor:publish --provider="Backpack\MenuCRUD\MenuCRUDServiceProvider"
 ```
 
-4) Run the migration to have the database table we need:
+3) Run the migration to have the database table we need:
 
 ```
 php artisan migrate
 ```
 
-5) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar_content.blade.php or menu.blade.php:
+4) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar_content.blade.php or menu.blade.php:
 
-```html
-<li><a href="{{ backpack_url('menu-item') }}"><i class="fa fa-list"></i> <span>Menu</span></a></li>
+```
+php artisan backpack:add-sidebar-content "<li class='nav-item'><a class='nav-link' href='{{ backpack_url('menu-item') }}'><i class='nav-icon fa fa-list'></i> <span>Menu</span></a></li>"
 ```
 
 
