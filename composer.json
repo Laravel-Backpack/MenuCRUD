@@ -1,7 +1,7 @@
 {
     "name": "backpack/menucrud",
     "type": "library",
-    "description": "An admin panel for menu items, using Backpack\\CRUD on Laravel 5.",
+    "description": "An admin panel for menu items, using Backpack\\CRUD on Laravel 6.",
     "keywords": [
         "backpack",
         "MenuCRUD"
@@ -19,8 +19,8 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "backpack/crud": "^4.0|v4.x-dev",
-        "backpack/pagemanager": "^2.0|v4.x-dev"
+        "backpack/crud": "^4.0.0",
+        "backpack/pagemanager": "^2.0"
     },
     "require-dev": {
         "phpunit/phpunit" : "4.*",

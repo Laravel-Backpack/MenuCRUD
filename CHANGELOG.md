@@ -4,22 +4,17 @@ All Notable changes to `MenuCRUD` will be documented in this file.
 
 Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) principles.
 
-## NEXT - YYYY-MM-DD
+-------------
+
+## 2.0.0 - 2019-09-24
 
 ### Added
-- Nothing
-
-### Deprecated
-- Nothing
-
-### Fixed
-- Nothing
+- support for Backpack v4;
 
 ### Removed
-- Nothing
+- support for Backpack v3;
 
-### Security
-- Nothing
+-------------
 
 
 ## 1.0.14 - 2019-09-04
