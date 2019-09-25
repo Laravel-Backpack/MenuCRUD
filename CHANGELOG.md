@@ -6,6 +6,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------------
 
+## 2.0.1 - 2019-09-25
+
+### Fixed
+- routes not registering sometimes because no fallback was provided to base config variables;
+
+
 ## 2.0.0 - 2019-09-24
 
 ### Added
