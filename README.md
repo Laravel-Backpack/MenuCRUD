@@ -18,6 +18,8 @@ Usually used for front-end menus, not back-end. Adding a menu item in MenuCRUD w
 
 ## Install
 
+This needs [Backpack\PageManager](https://github.com/Laravel-Backpack/pagemanager) to be installed first. If you haven't already, please do that first.
+
 Since MenuCRUD is just a Backpack\CRUD example, you can choose to install it one of two ways.
 
 **(A) Download and place files in your application** (recommended)
