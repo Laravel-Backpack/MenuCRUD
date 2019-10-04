@@ -49,7 +49,7 @@ class MenuItemCrudController extends CrudController
                 'model' => "\Backpack\MenuCRUD\app\Models\MenuItem",
             ]);
             $this->crud->addField([
-                'name' => 'type',
+                'name' => ['type', 'link', 'page_id'],
                 'label' => 'Type',
                 'type' => 'page_or_link',
                 'page_model' => '\Backpack\PageManager\app\Models\Page',
