@@ -2,8 +2,8 @@
 
 namespace Backpack\MenuCRUD\app\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Illuminate\Database\Eloquent\Model;
 
 class MenuItem extends Model
 {
