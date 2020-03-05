@@ -6,6 +6,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------------
 
+## 2.0.3 - 2020-03-05
+
+### Fixed
+- upgraded PHPUnit;
+
+
 ## 2.0.2 - 2019-10-04
 
 ### Fixed
