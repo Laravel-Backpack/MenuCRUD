@@ -6,6 +6,12 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 
 -------------
 
+## 2.0.5 - 2020-04-24
+
+### Added
+- support for PageManager 3.x;
+
+
 ## 2.0.4 - 2020-04-24
 
 ### Added
