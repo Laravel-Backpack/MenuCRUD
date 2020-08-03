@@ -91,7 +91,20 @@ php artisan migrate
 php artisan backpack:add-sidebar-content "<li class='nav-item'><a class='nav-link' href='{{ backpack_url('menu-item') }}'><i class='nav-icon la la-list'></i> <span>Menu</span></a></li>"
 ```
 
+#### Usage in your template
 
+Here's a simple example to use in your frontend:
+
+You can access item children with `$item->children`
+
+```
+@foreach (\App\MenuItem::getTree(); as $item)
+  <a class="no-underline hover:underline p-3"
+     href="{{$item->url()}}">
+     {{ $item->name }}
+  </a> 
+@endforeach 
+```
 
 ## Change log
 
