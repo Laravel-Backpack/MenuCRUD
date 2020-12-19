@@ -106,15 +106,7 @@ You can access item children with `$item->children`
 @endforeach 
 ```
 
-for Installation type (B), change the namespace to : `Backpack\MenuCRUD\app\Models`
-
-```
-@foreach (Backpack\MenuCRUD\app\Models\MenuItem::getTree(); as $item)
-<a class="no-underline hover:underline p-3" href="{{$item->url()}}">
-    {{ $item->name }}
-</a>
-@endforeach
-```
+For Installation type (B), change the namespace to `Backpack\MenuCRUD\app\Models`.
 
 ## Change log
 
