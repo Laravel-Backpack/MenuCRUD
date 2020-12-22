@@ -106,6 +106,8 @@ You can access item children with `$item->children`
 @endforeach 
 ```
 
+For Installation type (B), change the namespace to `Backpack\MenuCRUD\app\Models`.
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
