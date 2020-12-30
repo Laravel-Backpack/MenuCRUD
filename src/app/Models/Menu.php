@@ -29,6 +29,19 @@ class Menu extends Model
     |--------------------------------------------------------------------------
     */
 
+    public static function boot()
+    {
+        parent::boot();
+
+        static::updated(function ($menu) {
+            if ($menu->wasChanged('placement')) {
+                \App\Models\Menu::where('placement', $menu->placement)
+                    ->where('id', '!=', $menu->id)
+                    ->update(['placement' => null]);
+            }
+        });
+    }
+
     /**
      * Get all menu items, in a hierarchical collection.
      * Supports infinite levels of indentation.
