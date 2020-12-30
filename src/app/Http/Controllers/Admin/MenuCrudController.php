@@ -19,11 +19,6 @@ class MenuCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
-    public function rendermenu()
-    {
-        return view('frontend.components.menu_wrapper', ['menus' => \Backpack\CRUD\app\Models\Menu::getTree('mobile_menu')]);
-    }
-
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
      * 
