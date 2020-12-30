@@ -35,7 +35,7 @@ class Menu extends Model
 
         static::updated(function ($menu) {
             if ($menu->wasChanged('placement')) {
-                \App\Models\Menu::where('placement', $menu->placement)
+                \Backpack\MenuCRUD\app\Models\Menu::where('placement', $menu->placement)
                     ->where('id', '!=', $menu->id)
                     ->update(['placement' => null]);
             }
