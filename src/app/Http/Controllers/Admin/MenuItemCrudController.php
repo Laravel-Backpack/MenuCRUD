@@ -24,12 +24,12 @@ class MenuItemCrudController extends CrudController
         }
 
         $this->crud->setModel("Backpack\MenuCRUD\app\Models\MenuItem");
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/menu-item');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/menu-item');
         $this->crud->setEntityNameStrings('menu item', 'menu items');
         $this->crud->addClause('orderBy', 'lft', 'asc');
         $this->crud->addClause('where', 'menu_id', $this->menu_id);
 
-        $this->crud->setHeading('menu items' . " - <a href='" . backpack_url('menu/' . $this->menu_id . '/show') . "'>" . $this->menu->name . '</a>', false);
+        $this->crud->setHeading('menu items'." - <a href='".backpack_url('menu/'.$this->menu_id.'/show')."'>".$this->menu->name.'</a>', false);
 
         $this->crud->enableReorder('name', 30); // Basically infinite
 

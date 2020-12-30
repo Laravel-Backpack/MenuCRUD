@@ -60,7 +60,7 @@ class Menu extends Model
         $tree = [];
 
         foreach ($menus as $primaryKey => $menu) {
-            if (!isset($flat[$primaryKey])) {
+            if (! isset($flat[$primaryKey])) {
                 $flat[$primaryKey]['menu_data'] = $menu;
             }
 
@@ -77,7 +77,7 @@ class Menu extends Model
     public function customActions($crud = false)
     {
         return '
-        <a href="' . backpack_url('menu-item', $this->id) . '" class="btn btn-sm btn-link"><i class="la la-list"></i> Menu Items</a>';
+        <a href="'.backpack_url('menu-item', $this->id).'" class="btn btn-sm btn-link"><i class="la la-list"></i> Menu Items</a>';
     }
 
     /*

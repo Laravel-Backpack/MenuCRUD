@@ -29,9 +29,9 @@ class MenuCRUDServiceProvider extends ServiceProvider
     public function boot()
     {
         // publish migrations
-        $this->publishes([__DIR__ . '/database/migrations' => database_path('migrations')], 'migrations');
+        $this->publishes([__DIR__.'/database/migrations' => database_path('migrations')], 'migrations');
         // public config
-        $this->publishes([__DIR__ . '/config/menu.php' => config_path('backpack/menu.php')]);
+        $this->publishes([__DIR__.'/config/menu.php' => config_path('backpack/menu.php')]);
     }
 
     /**
@@ -43,11 +43,11 @@ class MenuCRUDServiceProvider extends ServiceProvider
     public function setupRoutes(Router $router)
     {
         // by default, use the routes file provided in vendor
-        $routeFilePathInUse = __DIR__ . $this->routeFilePath;
+        $routeFilePathInUse = __DIR__.$this->routeFilePath;
 
         // but if there's a file with the same name in routes/backpack, use that one
-        if (file_exists(base_path() . $this->routeFilePath)) {
-            $routeFilePathInUse = base_path() . $this->routeFilePath;
+        if (file_exists(base_path().$this->routeFilePath)) {
+            $routeFilePathInUse = base_path().$this->routeFilePath;
         }
 
         $this->loadRoutesFrom($routeFilePathInUse);

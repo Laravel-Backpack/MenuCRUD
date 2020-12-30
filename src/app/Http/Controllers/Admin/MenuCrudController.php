@@ -2,12 +2,12 @@
 
 namespace Backpack\CRUD\app\Http\Controllers\Admin;
 
-use Backpack\CRUD\app\Http\Requests\MenuRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
+use Backpack\CRUD\app\Http\Requests\MenuRequest;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class MenuCrudController
+ * Class MenuCrudController.
  * @package Backpack\CRUD\app\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
@@ -21,19 +21,19 @@ class MenuCrudController extends CrudController
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
-     * 
+     *
      * @return void
      */
     public function setup()
     {
         $this->crud->setModel(\Backpack\CRUD\app\Models\Menu::class);
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/menu');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/menu');
         $this->crud->setEntityNameStrings('menu', 'menus');
     }
 
     /**
      * Define what happens when the List operation is loaded.
-     * 
+     *
      * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
      * @return void
      */
@@ -44,7 +44,7 @@ class MenuCrudController extends CrudController
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - $this->crud->column('price')->type('number');
-         * - $this->crud->addColumn(['name' => 'price', 'type' => 'number']); 
+         * - $this->crud->addColumn(['name' => 'price', 'type' => 'number']);.
          */
     }
 
@@ -56,7 +56,7 @@ class MenuCrudController extends CrudController
 
     /**
      * Define what happens when the Create operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-create
      * @return void
      */
@@ -69,13 +69,13 @@ class MenuCrudController extends CrudController
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - $this->crud->field('price')->type('number');
-         * - $this->crud->addField(['name' => 'price', 'type' => 'number'])); 
+         * - $this->crud->addField(['name' => 'price', 'type' => 'number']));.
          */
     }
 
     /**
      * Define what happens when the Update operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-update
      * @return void
      */
@@ -90,12 +90,12 @@ class MenuCrudController extends CrudController
 
         $this->crud->addColumn([
             'name'  => 'name',
-            'label' => "Name",
+            'label' => 'Name',
             'type'  => 'text',
         ]);
         $this->crud->addColumn([
             'name'    => 'placement',
-            'label'   => "Placement",
+            'label'   => 'Placement',
             'type'    => 'select_from_array',
             'options' => config('backpack.menu.placement'),
         ]);
@@ -105,12 +105,12 @@ class MenuCrudController extends CrudController
     {
         $this->crud->addField([
             'name'  => 'name',
-            'label' => "Name",
+            'label' => 'Name',
             'type'  => 'text',
         ]);
         $this->crud->addField([
             'name'        => 'placement',
-            'label'       => "Placement",
+            'label'       => 'Placement',
             'type'        => 'select2_from_array',
             'options'     => config('backpack.menu.placement'),
             'allows_null' => true,
