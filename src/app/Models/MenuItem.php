@@ -50,4 +50,9 @@ class MenuItem extends Model
                 break;
         }
     }
+
+    public function getIsCurrentAttribute()
+    {
+        return $this->url() == url()->current();
+    }
 }

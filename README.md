@@ -105,7 +105,7 @@ Create a recursive single menu item renderer in blade:
 
 ```
 <li>
-    <a href="{{ $menu['menu_data']->url() }}">{{ $menu['menu_data']->name }}</a>
+    <a href="{{ $menu['menu_data']->url() }}">{{ $menu['menu_data']->name }}@if ($menu['menu_data']->is_current) (current) @endif</a>
     @isset($menu['submenus'])
         @foreach ($menu['submenus'] as $item)
             <ul>
