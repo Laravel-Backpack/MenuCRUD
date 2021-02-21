@@ -60,7 +60,7 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
 6) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
 
 ```html
-<li><a href="{{ backpack_url('menu-item') }}"><i class="la la-list"></i> <span>Menu</span></a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('menu-item') }}"><i class="nav-icon la la-list"></i> <span>Menu</span></a></li>
 ```
 
 
