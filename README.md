@@ -152,7 +152,7 @@ If you are looking for a developer/team to help you build an admin panel on Lara
 
 
 [ico-version]: https://img.shields.io/packagist/v/backpack/MenuCRUD.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-dual-blue?style=flat-square
 [ico-travis]: https://img.shields.io/travis/Laravel-Backpack/MenuCRUD/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/Laravel-Backpack/MenuCRUD.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/Laravel-Backpack/MenuCRUD.svg?style=flat-square
