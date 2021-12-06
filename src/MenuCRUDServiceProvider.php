@@ -29,11 +29,11 @@ class MenuCRUDServiceProvider extends ServiceProvider
     public function boot()
     {
         // publish views
-        $this->publishes([__DIR__.'/resources/views' => base_path('resources/views')], 'views');
+        $this->publishes([__DIR__.'/resources/views' => base_path('resources/views/vendor/backpack/crud')], 'views');
         // publish migrations
         $this->publishes([__DIR__.'/database/migrations' => database_path('migrations')], 'migrations');
 
-        $this->loadViewsFrom(realpath(__DIR__.'/resources/views/vendor/backpack/crud'), 'menucrud');
+        $this->loadViewsFrom(realpath(__DIR__.'/resources/views'), 'menucrud');
     }
 
     /**
