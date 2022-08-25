@@ -60,11 +60,9 @@ class MenuItem extends Model
         switch ($this->type) {
             case 'external_link':
                 return $this->link;
-                break;
 
             case 'internal_link':
                 return is_null($this->link) ? '#' : url($this->link);
-                break;
 
             default: //page_link
                 if ($this->page) {
