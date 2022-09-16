@@ -55,7 +55,7 @@ class MenuItemCrudController extends CrudController
                 'page_model' => '\Backpack\PageManager\app\Models\Page',
                 'view_namespace' => file_exists(resource_path('views/vendor/backpack/crud/fields/page_or_link.blade.php')) ? null : 'menucrud::fields',
                 'default_internal' => backpack_url('/dashboard'),
-                'default_external' => 'https://www.google.com'
+                'default_external' => 'https://www.google.com',
             ]);
         });
     }
