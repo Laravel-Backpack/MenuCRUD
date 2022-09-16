@@ -13,6 +13,9 @@
     $field['options']['external_link'] = $field['options']['external_link'] ?? trans('backpack::crud.external_link');
 
     $field['pages'] = $field['pages'] ?? ($field['page_model'] ?? config('backpack.pagemanager.page_model_class'))::all();
+
+    $field['internal']['default'] = ($field['default_internal'] ? $field['default_internal'] : "");
+    $field['external']['default'] = ($field['default_external'] ? $field['default_external'] : "");
 ?>
 
 @include('crud::fields.inc.wrapper_start')
@@ -78,6 +81,8 @@
 
                     @if (isset($entry) && $entry->{$field['name']['type']} === 'internal_link' && $entry->{$field['name']['link']})
                         value="{{ $entry->{$field['name']['link']} }}"
+                    @else
+                        value={{ $field['internal']['default'] }}
                     @endif
                     >
             </div>
@@ -97,6 +102,8 @@
 
                     @if (isset($entry) && $entry->{$field['name']['type']} === 'external_link' && $entry->{$field['name']['link']})
                         value="{{ $entry->{$field['name']['link']} }}"
+                    @else
+                        value={{ $field['external']['default'] }}
                     @endif
                     >
             </div>
