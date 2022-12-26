@@ -39,16 +39,18 @@ The only PRO of installing it as a package is that you may benefit from updates.
 
 2) Paste the 'app' and 'database' folders over your projects (merge them). No file overwrite warnings should come up.
 
-3) Replace all mentions of 'Backpack\MenuCRUD\app' in the pasted files with your application's namespace ('App' if you haven't changed it):
+3) Copy the `page_or_link.blade.php` file located in 'resources/views/fields' folder to your project's 'resources/views/vendor/backpack/crud/fields' folder. No file overwrite warnings should come up. 
+
+4) Replace all mentions of 'Backpack\MenuCRUD\app' in the pasted files with your application's namespace ('App' if you haven't changed it):
 - app/Http/Controllers/Admin/MenuItemCrudController.php
 - app/Models/MenuItem.php
 
-4) Run the migration to have the database table we need:
+1) Run the migration to have the database table we need:
 ```
 php artisan migrate
 ```
 
-5) Add MenuCRUD to your routes file:
+1) Add MenuCRUD to your routes file:
 
 ```
 Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['web', 'auth'], 'namespace' => 'Admin'], function () {
@@ -57,7 +59,7 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
 });
 ```
 
-6) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
+7) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
 
 ```html
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('menu-item') }}"><i class="nav-icon la la-list"></i> <span>Menu</span></a></li>
