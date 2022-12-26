@@ -45,12 +45,12 @@ The only PRO of installing it as a package is that you may benefit from updates.
 - app/Http/Controllers/Admin/MenuItemCrudController.php
 - app/Models/MenuItem.php
 
-1) Run the migration to have the database table we need:
+5) Run the migration to have the database table we need:
 ```
 php artisan migrate
 ```
 
-1) Add MenuCRUD to your routes file:
+6) Add MenuCRUD to your routes file:
 
 ```
 Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middleware' => ['web', 'auth'], 'namespace' => 'Admin'], function () {
