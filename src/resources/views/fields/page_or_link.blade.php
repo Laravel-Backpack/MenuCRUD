@@ -71,13 +71,15 @@
                     placeholder="{{ trans('backpack::crud.internal_link_placeholder', ['url', url(config('backpack.base.route_prefix').'/page')]) }}"
                     for="{{ $field['name']['link'] }}"
                     required
-
-                    @if (isset($entry) && $entry->{$field['name']['type']} !== 'internal_link')
-                        disabled="disabled"
-                    @endif
-
-                    @if (isset($entry) && $entry->{$field['name']['type']} === 'internal_link' && $entry->{$field['name']['link']})
-                        value="{{ $entry->{$field['name']['link']} }}"
+                    @if (isset($entry))
+                        @if ($entry->{$field['name']['type']} !== 'internal_link' && $entry->{$field['name']['type']} !== 'page_link')
+                            disabled="disabled"
+                        @endif
+                        @if ($entry->{$field['name']['type']} === 'internal_link' && $entry->{$field['name']['link']})
+                            value="{{ $entry->{$field['name']['link']} }}"
+                        @endif
+                    @else
+                        @disabled(true)
                     @endif
                     >
             </div>
@@ -90,13 +92,16 @@
                     placeholder="{{ trans('backpack::crud.page_link_placeholder') }}"
                     for="{{ $field['name']['link'] }}"
                     required
+                    @if (isset($entry))
+                        @if ($entry->{$field['name']['type']} !== 'external_link' && $entry->{$field['name']['type']} !== 'page_link')
+                            disabled="disabled"
+                        @endif
 
-                    @if (isset($entry) && $entry->{$field['name']['type']} !== 'external_link')
-                        disabled="disabled"
-                    @endif
-
-                    @if (isset($entry) && $entry->{$field['name']['type']} === 'external_link' && $entry->{$field['name']['link']})
-                        value="{{ $entry->{$field['name']['link']} }}"
+                        @if ($entry->{$field['name']['type']} === 'external_link' && $entry->{$field['name']['link']})
+                            value="{{ $entry->{$field['name']['link']} }}"
+                        @endif
+                    @else
+                        @disabled(true)
                     @endif
                     >
             </div>
