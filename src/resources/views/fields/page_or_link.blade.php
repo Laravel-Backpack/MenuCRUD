@@ -73,13 +73,16 @@
                     placeholder="{{ trans('backpack::crud.internal_link_placeholder', ['url', url(config('backpack.base.route_prefix').'/page')]) }}"
                     for="{{ $field['configurationNames']['link'] }}"
                     required
+                    @if(isset($entry))
+                        @if ($entry->{$field['configurationNames']['type']} !== 'internal_link' && $entry->{$field['configurationNames']['type']} !== 'page_link')
+                            disabled="disabled"
+                        @endif
 
-                    @if (isset($entry) && $entry->{$field['configurationNames']['type']} !== 'internal_link')
+                        @if ($entry->{$field['configurationNames']['type']} === 'internal_link' && $entry->{$field['configurationNames']['link']})
+                            value="{{ $entry->{$field['configurationNames']['link']} }}"
+                        @endif
+                    @else
                         disabled="disabled"
-                    @endif
-
-                    @if (isset($entry) && $entry->{$field['configurationNames']['type']} === 'internal_link' && $entry->{$field['configurationNames']['link']})
-                        value="{{ $entry->{$field['configurationNames']['link']} }}"
                     @endif
                     >
             </div>
@@ -92,13 +95,16 @@
                     placeholder="{{ trans('backpack::crud.page_link_placeholder') }}"
                     for="{{ $field['configurationNames']['link'] }}"
                     required
+                    @if(isset($entry))
+                        @if ($entry->{$field['configurationNames']['type']} !== 'external_link' && $entry->{$field['configurationNames']['type']} !== 'page_link')
+                            disabled="disabled"
+                        @endif
 
-                    @if (isset($entry) && $entry->{$field['configurationNames']['type']} !== 'external_link')
+                        @if ($entry->{$field['configurationNames']['type']} === 'external_link' && $entry->{$field['configurationNames']['link']})
+                            value="{{ $entry->{$field['configurationNames']['link']} }}"
+                        @endif
+                    @else
                         disabled="disabled"
-                    @endif
-
-                    @if (isset($entry) && $entry->{$field['configurationNames']['type']} === 'external_link' && $entry->{$field['configurationNames']['link']})
-                        value="{{ $entry->{$field['configurationNames']['link']} }}"
                     @endif
                     >
             </div>
