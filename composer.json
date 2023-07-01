@@ -23,7 +23,7 @@
         "backpack/pagemanager": "^3.2"
     },
     "require-dev": {
-        "phpunit/phpunit" : "^9.0||^7.0",
+        "phpunit/phpunit" : "^9.0||^7.0||^10.0",
         "scrutinizer/ocular": "~1.1",
         "squizlabs/php_codesniffer": "~2.3 || ~3.0"
     },
