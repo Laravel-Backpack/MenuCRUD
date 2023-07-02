@@ -114,12 +114,6 @@ For Installation type (B), change the namespace to `Backpack\MenuCRUD\app\Models
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
-## Testing
-
-``` bash
-composer test
-```
-
 ## Overwriting functionality
 
 If you've used installation type A and need to modify how this works in a project: 

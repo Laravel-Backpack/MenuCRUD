@@ -23,7 +23,6 @@
         "backpack/pagemanager": "^3.2"
     },
     "require-dev": {
-        "phpunit/phpunit" : "^9.0||^7.0",
         "scrutinizer/ocular": "~1.1",
         "squizlabs/php_codesniffer": "~2.3 || ~3.0"
     },
@@ -31,14 +30,6 @@
         "psr-4": {
             "Backpack\\MenuCRUD\\": "src"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Backpack\\MenuCRUD\\": "tests"
-        }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit --testdox"
     },
     "extra": {
         "branch-alias": {
