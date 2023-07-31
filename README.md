@@ -7,7 +7,7 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-An admin panel for menu items on Laravel 5 or Laravel 6, using [Backpack\CRUD](https://github.com/Laravel-Backpack/crud). Add, edit, reorder, nest, rename menu items and link them to [Backpack\PageManager](https://github.com/Laravel-Backpack/pagemanager) pages, external link or custom internal link. 
+An admin panel for menu items on Laravel 5 or Laravel 6, using [Backpack\CRUD](https://github.com/Laravel-Backpack/crud). Add, edit, reorder, nest, rename menu items and link them to [Backpack\PageManager](https://github.com/Laravel-Backpack/pagemanager) pages, external link or custom internal link.
 
 Usually used for front-end menus, not back-end. Adding a menu item in MenuCRUD will not add an item in the admin sidebar, though you can easily customize Backpack\Base's ```sidebar.blade.php``` to show all menu items in the db, if you'd like.
 
@@ -39,7 +39,7 @@ The only PRO of installing it as a package is that you may benefit from updates.
 
 2) Paste the 'app' and 'database' folders over your projects (merge them). No file overwrite warnings should come up.
 
-3) Copy the `page_or_link.blade.php` file located in 'resources/views/fields' folder to your project's 'resources/views/vendor/backpack/crud/fields' folder. No file overwrite warnings should come up. 
+3) Copy the `page_or_link.blade.php` file located in 'resources/views/fields' folder to your project's 'resources/views/vendor/backpack/crud/fields' folder. No file overwrite warnings should come up.
 
 4) Replace all mentions of 'Backpack\MenuCRUD\app' in the pasted files with your application's namespace ('App' if you haven't changed it):
 - app/Http/Controllers/Admin/MenuItemCrudController.php
@@ -59,9 +59,12 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
 });
 ```
 
-7) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar.blade.php or menu.blade.php:
+7) [optional] Add a menu item for it:
 
-```html
+```
+# For Backpack v6
+php artisan backpack:add-menu-content "<x-backpack::menu-item title='Menu' icon='la la-list' :link=\"backpack_url('menu-item')\" />"
+# For Backpack v5 or v4
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('menu-item') }}"><i class="nav-icon la la-list"></i> <span>Menu</span></a></li>
 ```
 
@@ -104,8 +107,8 @@ You can access item children with `$item->children`
   <a class="no-underline hover:underline p-3"
      href="{{$item->url()}}">
      {{ $item->name }}
-  </a> 
-@endforeach 
+  </a>
+@endforeach
 ```
 
 For Installation type (B), change the namespace to `Backpack\MenuCRUD\app\Models`.
@@ -116,8 +119,8 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## Overwriting functionality
 
-If you've used installation type A and need to modify how this works in a project: 
-- create a ```routes/backpack/menucrud.php``` file; the package will see that, and load _your_ routes file, instead of the one in the package; 
+If you've used installation type A and need to modify how this works in a project:
+- create a ```routes/backpack/menucrud.php``` file; the package will see that, and load _your_ routes file, instead of the one in the package;
 - create controllers/models that extend the ones in the package, and use those in your new routes file;
 - modify anything you'd like in the new controllers/models;
 
