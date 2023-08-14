@@ -65,7 +65,7 @@ Route::group(['prefix' => config('backpack.base.route_prefix', 'admin'), 'middle
 # For Backpack v6
 php artisan backpack:add-menu-content "<x-backpack::menu-item title='Menu' icon='la la-list' :link=\"backpack_url('menu-item')\" />"
 # For Backpack v5 or v4
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('menu-item') }}"><i class="nav-icon la la-list"></i> <span>Menu</span></a></li>
+php artisan backpack:add-sidebar-content "<li class='nav-item'><a class='nav-link' href='{{ backpack_url('menu-item') }}'><i class='nav-icon la la-list'></i> <span>Menu</span></a></li>"
 ```
 
 
@@ -90,9 +90,12 @@ php artisan vendor:publish --provider="Backpack\MenuCRUD\MenuCRUDServiceProvider
 php artisan migrate
 ```
 
-4) [optional] Add a menu item for it in resources/views/vendor/backpack/base/inc/sidebar_content.blade.php or menu.blade.php:
+4) [optional] Add a menu item for it:
 
 ```
+# For Backpack v6
+php artisan backpack:add-menu-content "<x-backpack::menu-item title='Menu' icon='la la-list' :link=\"backpack_url('menu-item')\" />"
+# For Backpack v5 or v4
 php artisan backpack:add-sidebar-content "<li class='nav-item'><a class='nav-link' href='{{ backpack_url('menu-item') }}'><i class='nav-icon la la-list'></i> <span>Menu</span></a></li>"
 ```
 
