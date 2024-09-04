@@ -49,11 +49,17 @@
         </div>
         <div class="col-sm-9">
             {{-- page slug input --}}
-            <div class="page_or_link_value page_link {{ (isset($entry) && $entry->{$field['configurationNames']['type']} === 'page_link') || (isset($entry) && !$entry->{$field['configurationNames']['type']} && !$field['allows_null']) || (!isset($entry) && !$field['allows_null']) ? '' : 'd-none' }}">
+            @php
+                $shouldShowPageLink = (isset($entry) && $entry->{$field['configurationNames']['type']} === 'page_link') ||
+                     (isset($entry) && !$entry->{$field['configurationNames']['type']} && !$field['allows_null']) || 
+                     (!isset($entry) && !$field['allows_null']);
+
+            @endphp
+            <div class="page_or_link_value page_link {{ $shouldShowPageLink ? '' : 'd-none' }}">
                 <select
                     class="form-control"
                     for="{{ $field['configurationNames']['page_id'] }}"
-                    required
+                    {{ $shouldShowPageLink ? 'required' : '' }}
                     >
                     @foreach ($field['pages'] as $page)
                         <option value="{{ $page->id }}"
@@ -66,13 +72,16 @@
             </div>
 
             {{-- internal link input --}}
-            <div class="page_or_link_value internal_link {{ isset($entry) && $entry->{$field['configurationNames']['type']} === 'internal_link' ? '' : 'd-none' }}">
+            @php
+                $shouldShowInternalLink = isset($entry) && $entry->{$field['configurationNames']['type']} === 'internal_link';
+            @endphp
+            <div class="page_or_link_value internal_link {{ $shouldShowInternalLink ? '' : 'd-none' }}">
                 <input
                     type="text"
                     class="form-control"
                     placeholder="{{ trans('backpack::crud.internal_link_placeholder', ['url', url(config('backpack.base.route_prefix').'/page')]) }}"
                     for="{{ $field['configurationNames']['link'] }}"
-                    required
+                    {{ $shouldShowInternalLink ? 'required' : '' }}
                     @if(isset($entry))
                         @if ($entry->{$field['configurationNames']['type']} !== 'internal_link' && $entry->{$field['configurationNames']['type']} !== 'page_link')
                             disabled="disabled"
@@ -88,15 +97,18 @@
             </div>
 
             {{-- external link input --}}
-            <div class="page_or_link_value external_link {{ isset($entry) && $entry->{$field['configurationNames']['type']} === 'external_link' ? '' : 'd-none' }}">
+            @php
+                $shouldShowExternalLink = isset($entry) && $entry->{$field['configurationNames']['type']} === 'external_link';
+            @endphp
+            <div class="page_or_link_value external_link {{ $shouldShowExternalLink ? '' : 'd-none' }}">
                 <input
                     type="url"
                     class="form-control"
                     placeholder="{{ trans('backpack::crud.page_link_placeholder') }}"
                     for="{{ $field['configurationNames']['link'] }}"
-                    required
+                    {{ $shouldShowExternalLink ? 'required' : '' }}
                     @if(isset($entry))
-                        @if ($entry->{$field['configurationNames']['type']} !== 'external_link' && $entry->{$field['configurationNames']['type']} !== 'page_link')
+                        @if (!in_array($entry->{$field['configurationNames']['type']}, ['external_link','page_link']))
                             disabled="disabled"
                         @endif
 
@@ -152,9 +164,10 @@
                 values.forEach(value => {
                     let isSelected = value.classList.contains(select.value);
 
-                    // toggle visibility and disabled
+                    // toggle visibility, disabled and required validation
                     value.classList.toggle('d-none', !isSelected);
                     value.firstElementChild.toggleAttribute('disabled', !isSelected);
+                    value.firstElementChild.toggleAttribute('required', isSelected);
                 });
 
                 // updates hidden fields
