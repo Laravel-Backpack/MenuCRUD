@@ -19,7 +19,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "backpack/crud": "7.0.0-alpha",
+        "backpack/crud": "^7.0.0-alpha",
         "backpack/pagemanager": "dev-next as 3.0"
     },
     "require-dev": {
