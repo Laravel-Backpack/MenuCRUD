@@ -19,8 +19,8 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "backpack/crud": "^6.0",
-        "backpack/pagemanager": "^3.2"
+        "backpack/crud": "^7.0.0-alpha",
+        "backpack/pagemanager": "dev-next as 3.0"
     },
     "require-dev": {
         "scrutinizer/ocular": "~1.1",
