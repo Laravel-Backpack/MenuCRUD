@@ -19,7 +19,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "backpack/crud": "^6.0",
+        "backpack/crud": "^6.0|^7.0",
         "backpack/pagemanager": "^3.2"
     },
     "require-dev": {
